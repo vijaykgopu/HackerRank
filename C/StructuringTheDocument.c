@@ -67,18 +67,16 @@ struct document get_document(char* text) {
         if(*text == ' '){
             word_ptr = NULL;
             char_ptr = NULL;
-            *text = 0;
-        }else if(*text == '.'){
-            if(*(text + 1) != '\n'){
-                sent_ptr = NULL;
-                char_ptr = NULL;
-            }
-            *text = 0;          
+        }else if((*text == '.') && (*(text + 1) != '\n')){
+            sent_ptr = NULL;
+            char_ptr = NULL;
         }else if(*text == '\n'){
             para_ptr = NULL;   
             char_ptr = NULL;
-            *text = 0;
         }
+
+        if((*text == ' ') || (*text == '.') || (*text == '\n'))
+            *text = 0;
 
         text++;
     }
