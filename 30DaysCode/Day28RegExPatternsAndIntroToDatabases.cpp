@@ -5,10 +5,7 @@ string ltrim(const string &);
 string rtrim(const string &);
 vector<string> split(const string &);
 
-
-
-int main()
-{
+int main(){
     vector <string> names;
     
     string N_temp;
